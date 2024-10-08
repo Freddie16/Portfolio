@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Software Developer Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('img.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Make sure the image covers the whole screen */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styles */
+        header {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: center; /* Center the header content */
+    text-align: left;
+    
+}
+
+        .header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.profile-image {
+    width: 360px;
+    height: 400px;
+    border-radius: 10px;
+    
+    flex-shrink: 0;
+    margin-left: -600px;
+}
+
+.header-text {
+    max-width: 700px;
+}
+
+.intro-text {
+    margin: 0;
+    font-size: 1.2rem; /* Same size as the description */
+    font-weight: 300;
+}
+
+.name-text {
+    margin: 5px 0;
+    font-size: 2.5rem; /* Larger size for emphasis */
+    font-weight: bold;
+}
+
+.description-text {
+    margin-top: 10px;
+    font-size: 1.2rem; /* Same size as intro-text */
+    font-weight: 300;
+    line-height: 1.8;
+    color: white; 
+}
+.header-text h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .header-text p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: white; /* Make paragraph text in header white */
+}
+
+nav {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 0 30px; /* Add some padding to the right */
+    margin-top: -20px;
+    margin-right: -460px; /* Adjust if needed to align with the header's height */
+}
+
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+.container {
+    max-width: 1500px; /* Same width as header-content for alignment */
+    margin: 80px auto;
+    padding: 0 20px; /* Same padding as header-content for alignment */
+    background-color: transparent;
+}
+        /* Section Cards */
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 12px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: none;
+        }
+
+        section:hover {
+            background-color: #f9fbfd;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            border-color: #3498db;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p, ul {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #3498db;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-card {
+            flex: 1 1 calc(30% - 20px);
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            position: relative;
+            transition: background 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #555;
+        }
+
+        .skill-card:hover {
+            background: rgba(52, 152, 219, 0.2);
+        }
+
+        .skill-card .icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-right: 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-card:hover .icon {
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Links */
+        .contact a {
+            color: #3498db;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #2980b9;
+        }
+
+        /* Button Styling for contact section */
+        .contact a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 4rem;
+            }
+
+            .header-text p {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .skill-card {
+                flex: 1 1 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="profile.jpeg" alt="Profile Image" class="profile-image">
+            <div class="header-text">
+                <p class="intro-text">Hello, my name is</p>
+                <h1 class="name-text">Fred Murigi</h1>
+                <p class="description-text">
+                    I am a passionate software developer with over 4 years of experience in web and mobile development.
+                </p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>About Me</h2>
+            <p>I am a highly dedicated and results-driven software developer with over 4 years of experience specializing in both web and mobile application development. My passion lies in solving complex problems with clean, efficient code, and I excel at building scalable solutions using modern frameworks. I have a proven ability to work collaboratively in teams and a track record of delivering high-quality projects within tight deadlines. Whether building from scratch or maintaining existing applications, I thrive in crafting intuitive, user-focused digital products. My journey started with a curiosity for coding, which quickly evolved into a full-blown love for building intuitive and scalable applications. I thrive on challenges and enjoy turning complex problems into simple, elegant solutions. Whether working on fintech applications or creating seamless content management systems, I am always eager to learn, grow, and collaborate.</p>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <strong>Chamasoft - Fintech Company</strong> (2 years)
+                    <br>
+                    As a software developer at Chamasoft, I played a pivotal role in designing and implementing secure, scalable web applications tailored to the fintech space. I contributed to the integration of secure payment gateways, optimized backend processes for efficiency, and helped improve the user experience through performance enhancements.
+                </li>
+                <li>
+                    <strong>Gozee - CMS Platform</strong>
+                    <br>
+                    At Gozee, I worked on building a content management system from the ground up. This involved developing custom themes and plugins, streamlining content workflows, and ensuring that the platform was highly intuitive and flexible for end-users. My efforts were key in launching a platform that now manages thousands of pieces of content efficiently.
+                </li>
+            </ul>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-card">
+                <i class="fab fa-react icon"></i>
+                <span>Frontend: React, Next.js, JavaScript, HTML5, CSS3</span>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server icon"></i>
+                <span>Backend: Node.js, Python, Ruby, PHP</span>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt icon"></i>
+                <span>Mobile: Flutter, Android, iOS</span>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cogs icon"></i>
+                <span>CMS: WordPress, Custom Plugin Development, ACF</span>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-tools icon"></i>
+                <span>Tools & Platforms: Git, Docker, Supabase</span>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>I am always open to new opportunities and collaborations. Feel free to reach out if you'd like to discuss a project or learn more about how I can contribute to your team.</p>
+            <p>Email: <a href="mailto:freddiemurigi@gmail.com">freddiemurigi@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/Freddie16" target="_blank">https://github.com/Freddie16</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/fred-murigi-5b6a00192" target="_blank">www.linkedin.com/in/fred-murigi-5b6a00192</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fred Murigi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
